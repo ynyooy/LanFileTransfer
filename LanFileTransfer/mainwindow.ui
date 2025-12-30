@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>LocalSend</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout">
+    <item>
+     <widget class="QWidget" name="leftPanel">
+      <layout class="QVBoxLayout">
+       <item>
+        <widget class="QPushButton" name="receiveButton">
+         <property name="text">
+          <string>接收</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="sendButton">
+         <property name="text">
+          <string>发送</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="settingsButton">
+         <property name="text">
+          <string>设置</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="rightPanel">
+      <layout class="QVBoxLayout">
+       <item>
+        <widget class="QTabWidget" name="tabWidget">
+         <property name="tabPosition">
+          <enum>QTabWidget::North</enum>
+         </property>
+         <widget class="QWidget" name="fileTab">
+          <layout class="QVBoxLayout">
+           <item>
+            <widget class="QPushButton" name="selectFileButton">
+             <property name="text">
+              <string>选择文件</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QListView" name="fileListView"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="folderTab">
+          <layout class="QVBoxLayout">
+           <item>
+            <widget class="QPushButton" name="selectFolderButton">
+             <property name="text">
+              <string>选择文件夹</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QListView" name="folderListView"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="textTab">
+          <layout class="QVBoxLayout">
+           <item>
+            <widget class="QPushButton" name="selectTextButton">
+             <property name="text">
+              <string>选择文本</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QListView" name="textListView"/>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+       <item>
+        <widget class="QProgressBar" name="transferProgressBar"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="deviceLabel">
+         <property name="text">
+          <string>附加设备</string>
+         </property>
+        </widget>
+        <widget class="QListView" name="deviceListView"/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
