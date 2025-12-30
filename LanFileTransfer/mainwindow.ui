@@ -6,107 +6,344 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>507</width>
+    <height>277</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>LocalSend</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout">
+   <layout class="QHBoxLayout" name="horizontalLayout_4">
     <item>
-     <widget class="QWidget" name="leftPanel">
-      <layout class="QVBoxLayout">
-       <item>
-        <widget class="QPushButton" name="receiveButton">
-         <property name="text">
-          <string>接收</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="sendButton">
-         <property name="text">
-          <string>发送</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="settingsButton">
-         <property name="text">
-          <string>设置</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="lblTitle">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:15pt; font-weight:300; color:#2196f3;&quot;&gt;LocalSend&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="sendButton">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: white;
+    padding: 8px;
+}
+
+QPushButton:hover {
+    border-color: #2196f3;
+    background-color: #f5f9ff;
+}
+
+QPushButton:pressed {
+    border-color: #1976d2;
+    background-color: #e3f2fd;
+}</string>
+        </property>
+        <property name="text">
+         <string>发送</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="settingsButton">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: white;
+    padding: 8px;
+}
+
+QPushButton:hover {
+    border-color: #2196f3;
+    background-color: #f5f9ff;
+}
+
+QPushButton:pressed {
+    border-color: #1976d2;
+    background-color: #e3f2fd;
+}</string>
+        </property>
+        <property name="text">
+         <string>设置</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="receiveButton">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: white;
+    padding: 8px;
+}
+
+QPushButton:hover {
+    border-color: #2196f3;
+    background-color: #f5f9ff;
+}
+
+QPushButton:pressed {
+    border-color: #1976d2;
+    background-color: #e3f2fd;
+}</string>
+        </property>
+        <property name="text">
+         <string>接收</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
     </item>
     <item>
-     <widget class="QWidget" name="rightPanel">
-      <layout class="QVBoxLayout">
-       <item>
-        <widget class="QTabWidget" name="tabWidget">
-         <property name="tabPosition">
-          <enum>QTabWidget::North</enum>
-         </property>
-         <widget class="QWidget" name="fileTab">
-          <layout class="QVBoxLayout">
-           <item>
-            <widget class="QPushButton" name="selectFileButton">
-             <property name="text">
-              <string>选择文件</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QListView" name="fileListView"/>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="folderTab">
-          <layout class="QVBoxLayout">
-           <item>
-            <widget class="QPushButton" name="selectFolderButton">
-             <property name="text">
-              <string>选择文件夹</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QListView" name="folderListView"/>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="textTab">
-          <layout class="QVBoxLayout">
-           <item>
-            <widget class="QPushButton" name="selectTextButton">
-             <property name="text">
-              <string>选择文本</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QListView" name="textListView"/>
-           </item>
-          </layout>
-         </widget>
-        </widget>
-       </item>
-       <item>
-        <widget class="QProgressBar" name="transferProgressBar"/>
-       </item>
-       <item>
-        <widget class="QLabel" name="deviceLabel">
-         <property name="text">
-          <string>附加设备</string>
-         </property>
-        </widget>
-        <widget class="QListView" name="deviceListView"/>
-       </item>
-      </layout>
-     </widget>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="QLabel" name="lblSubtitle">
+        <property name="styleSheet">
+         <string notr="true">跨平台局域网文件传输</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#555;&quot;&gt;跨平台局域网文件传输&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="line">
+        <property name="frameShape">
+         <enum>QFrame::HLine</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+        <property name="lineWidth">
+         <number>2</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="lblSelection">
+            <property name="text">
+             <string>&lt;html&gt;
+&lt;head/&gt;
+&lt;body&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;span style=&quot;font-size:8pt; font-weight:300; color:#5577AA;&quot;&gt;
+  选择发送内容
+&lt;/span&gt;
+&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QPushButton" name="btnSendFile">
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+    border: 2px solid #eeeeee;
+    border-radius: 8px;
+    background-color: #fafafa;
+    padding: 8px;
+    color: #424242;
+    font-weight: 500;
+}
+
+QPushButton:hover {
+    border-color: #bdbdbd;
+    background-color: #f5f5f5;
+    color: #212121;
+}
+
+QPushButton:pressed {
+    border-color: #9e9e9e;
+    background-color: #eeeeee;
+    color: #212121;
+}</string>
+            </property>
+            <property name="text">
+             <string>文件</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnSendFolder">
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+    border: 2px solid #eeeeee;
+    border-radius: 8px;
+    background-color: #fafafa;
+    padding: 8px;
+    color: #424242;
+    font-weight: 500;
+}
+
+QPushButton:hover {
+    border-color: #bdbdbd;
+    background-color: #f5f5f5;
+    color: #212121;
+}
+
+QPushButton:pressed {
+    border-color: #9e9e9e;
+    background-color: #eeeeee;
+    color: #212121;
+}</string>
+            </property>
+            <property name="text">
+             <string>文件夹</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnSendText">
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+    border: 2px solid #eeeeee;
+    border-radius: 8px;
+    background-color: #fafafa;
+    padding: 8px;
+    color: #424242;
+    font-weight: 500;
+}
+
+QPushButton:hover {
+    border-color: #bdbdbd;
+    background-color: #f5f5f5;
+    color: #212121;
+}
+
+QPushButton:pressed {
+    border-color: #9e9e9e;
+    background-color: #eeeeee;
+    color: #212121;
+}</string>
+            </property>
+            <property name="text">
+             <string>文本</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLabel" name="lblDevicesTitle">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:200;&quot;&gt;附近的设备&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnrefresh">
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+    border: none;
+    border-radius: 10px;
+    background-color: #90caf9;  /* 变浅的蓝色 */
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    max-width: 20px;
+    min-height: 20px;
+    max-height: 20px;
+    qproperty-iconSize: 10px;
+    /* 字体和图标颜色调整为浅色 */
+    color: #ffffff;
+    font-size: 8px;  /* 如果有文字，调整字体大小 */
+}
+
+QPushButton:hover {
+    background-color: #64b5f6;  /* 悬停时稍微深一点 */
+}
+
+QPushButton:pressed {
+    background-color: #42a5f5;  /* 按下时更深一些 */
+}</string>
+            </property>
+            <property name="text">
+             <string>刷新</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QListView" name="fileListView"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>
