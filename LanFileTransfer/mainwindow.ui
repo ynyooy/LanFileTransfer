@@ -65,7 +65,7 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="pageSend">
        <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -86,7 +86,7 @@
          </widget>
         </item>
         <item>
-         <layout class="QVBoxLayout" name="SendButton">
+         <layout class="QVBoxLayout">
           <item>
            <widget class="QLabel" name="lblSelection">
             <property name="text">
@@ -122,7 +122,7 @@
          </layout>
         </item>
         <item>
-         <layout class="QVBoxLayout" name="NearbyDevices">
+         <layout class="QVBoxLayout">
           <item>
            <layout class="QHBoxLayout">
             <item>
@@ -151,11 +151,64 @@
       <widget class="QWidget" name="pageReceive">
        <layout class="QVBoxLayout">
         <item>
-         <widget class="QLabel" name="label_receive">
+         <widget class="QLabel" name="lblReceiveTitle">
           <property name="text">
-           <string>接收页面（显示接收任务、进度、保存路径）</string>
+           <string>&lt;h3&gt;接收文件&lt;/h3&gt;</string>
           </property>
          </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>保存路径：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="editSavePath">
+            <property name="placeholderText">
+             <string>请选择接收文件保存路径</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnChooseSavePath">
+            <property name="text">
+             <string>选择</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="lblReceiveStatus">
+          <property name="text">
+           <string>状态：未开始接收</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListView" name="receiveListView"/>
+        </item>
+        <item>
+         <layout class="QHBoxLayout">
+          <item>
+           <widget class="QPushButton" name="btnStartReceive">
+            <property name="text">
+             <string>开始接收</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnStopReceive">
+            <property name="text">
+             <string>停止接收</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
