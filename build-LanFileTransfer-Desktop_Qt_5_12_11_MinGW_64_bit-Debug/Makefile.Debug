@@ -588,7 +588,10 @@ debug/mainwindow.o: ../LanFileTransfer/mainwindow.cpp ../LanFileTransfer/mainwin
 		D:/QT/5.12.11/mingw73_64/include/QtCore/QDebug \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/QDir \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/qdir.h \
-		D:/QT/5.12.11/mingw73_64/include/QtCore/qfileinfo.h
+		D:/QT/5.12.11/mingw73_64/include/QtCore/qfileinfo.h \
+		D:/QT/5.12.11/mingw73_64/include/QtWidgets/QFileDialog \
+		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qfiledialog.h \
+		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\LanFileTransfer\mainwindow.cpp
 
 debug/receiveworker.o: ../LanFileTransfer/receiveworker.cpp ../LanFileTransfer/receiveworker.h \
@@ -662,16 +665,15 @@ debug/receiveworker.o: ../LanFileTransfer/receiveworker.cpp ../LanFileTransfer/r
 		D:/QT/5.12.11/mingw73_64/include/QtCore/qcontiguouscache.h \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/qsharedpointer.h \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/qsharedpointer_impl.h \
+		D:/QT/5.12.11/mingw73_64/include/QtCore/QDataStream \
+		D:/QT/5.12.11/mingw73_64/include/QtCore/qdatastream.h \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/QFile \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/qfile.h \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/qfiledevice.h \
-		D:/QT/5.12.11/mingw73_64/include/QtCore/QDataStream \
-		D:/QT/5.12.11/mingw73_64/include/QtCore/qdatastream.h \
-		D:/QT/5.12.11/mingw73_64/include/QtCore/QDebug \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/QDir \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/qdir.h \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/qfileinfo.h \
-		D:/QT/5.12.11/mingw73_64/include/QtCore/QByteArray
+		D:/QT/5.12.11/mingw73_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\receiveworker.o ..\LanFileTransfer\receiveworker.cpp
 
 debug/moc_mainwindow.o: debug/moc_mainwindow.cpp 

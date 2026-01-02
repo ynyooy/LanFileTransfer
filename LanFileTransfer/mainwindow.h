@@ -27,6 +27,7 @@ private slots:
     void onNewConnection();
     void on_btnStartReceive_clicked();
     void on_btnStopReceive_clicked();
+    void on_btnChooseSavePath_clicked();
 
 private:
     Ui::MainWindow *ui;

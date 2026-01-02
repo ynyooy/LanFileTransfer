@@ -5,6 +5,7 @@
 #include <QTcpSocket>
 #include <QDebug>
 #include <QDir>
+#include <QFileDialog>
 #include <QStandardItemModel>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -20,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     //初始化接受任务模型
     receiveModel = new QStandardItemModel(this);
+    ui->receiveListView->setModel(receiveModel);
     //  初始化TCP服务器并启动监听
     tcpServer = new QTcpServer(this);
     connect(tcpServer, &QTcpServer::newConnection,
@@ -97,61 +99,67 @@ void MainWindow::on_btnStopReceive_clicked()
 }
 
 
-// mainwindow.cpp 中 onNewConnection 函数
 void MainWindow::onNewConnection()
 {
     while (tcpServer->hasPendingConnections()) {
+
         QTcpSocket *client = tcpServer->nextPendingConnection();
-        if (!client) {
-            qDebug() << "新连接为空";
-            continue;
-        }
+        if (!client)
+            return;
 
-        // 关键：先断开Socket的父子关系，避免跨线程父对象问题
-        client->setParent(nullptr);
+        qDebug() << "新连接：" << client->peerAddress().toString();
 
-        // 校验Socket状态
-        if (!client->isOpen()) {
-            qDebug() << "Socket未打开，关闭连接";
-            client->deleteLater();
-            continue;
-        }
-
-        qintptr sd = client->socketDescriptor();
-        QString savePath = ui->editSavePath->text();
-        qDebug() << "新客户端连接：" << client->peerAddress().toString() << "，描述符：" << sd;
-
-        // ========== 核心修复：立即释放主线程Socket，避免跨线程冲突 ==========
-        client->close(); // 先关闭主线程Socket
+        // ⭐ 关键：取 socketDescriptor
+        qintptr socketDescriptor = client->socketDescriptor();
         client->deleteLater();
 
-        // 创建接收线程（仅传递描述符，不依赖主线程Socket对象）
-        ReceiveWorker *worker = new ReceiveWorker(sd, savePath);
+        // ⭐ 正确获取保存路径
+        QString savePath = ui->editSavePath->text();
 
-        // 线程安全连接信号（必须用QueuedConnection）
-        connect(worker, &ReceiveWorker::progress, this, [ = ](QString info) {
-            if (receiveModel) {
-                receiveModel->appendRow(new QStandardItem(info));
-            }
-        }, Qt::QueuedConnection);
+        ReceiveWorker *worker =
+            new ReceiveWorker(socketDescriptor, savePath, this);
 
-        connect(worker, &ReceiveWorker::finished, this, [ = ](QString name) {
-            if (receiveModel) {
-                receiveModel->appendRow(new QStandardItem("✅ 接收完成：" + name));
-            }
-            worker->deleteLater();
-        }, Qt::QueuedConnection);
+        connect(worker, &ReceiveWorker::progress, this,
+        [ = ](const QString & msg) {
+            receiveModel->appendRow(new QStandardItem(msg));
+        });
 
-        connect(worker, &ReceiveWorker::error, this, [ = ](QString err) {
-            if (receiveModel) {
-                receiveModel->appendRow(new QStandardItem("❌ 错误：" + err));
-            }
-            worker->deleteLater();
-        }, Qt::QueuedConnection);
+        connect(worker, &ReceiveWorker::finished, this,
+        [ = ](const QString & fileName) {
+            receiveModel->appendRow(
+                new QStandardItem("✅ 接收完成：" + fileName));
+        });
 
-        // 启动线程
+        connect(worker, &ReceiveWorker::error, this,
+        [ = ](const QString & msg) {
+            receiveModel->appendRow(
+                new QStandardItem("❌ 错误：" + msg));
+        });
+
+        connect(worker, &QThread::finished,
+                worker, &QObject::deleteLater);
+
         worker->start();
     }
 }
+
+
+
+void MainWindow::on_btnChooseSavePath_clicked()
+{
+    QString dir = QFileDialog::getExistingDirectory(
+                      this,
+                      "选择接收文件保存路径",
+                      QDir::homePath()
+                  );
+
+    if (!dir.isEmpty()) {
+        ui->editSavePath->setText(dir);
+        ui->lblReceiveStatus->setText("状态：保存路径已设置");
+    }
+}
+
+
+
 
 

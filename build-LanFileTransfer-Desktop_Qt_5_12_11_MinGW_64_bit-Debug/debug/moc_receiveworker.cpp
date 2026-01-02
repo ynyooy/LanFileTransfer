@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_ReceiveWorker_t {
-    QByteArrayData data[8];
-    char stringdata0[53];
+    QByteArrayData data[7];
+    char stringdata0[52];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,15 +34,14 @@ static const qt_meta_stringdata_ReceiveWorker_t qt_meta_stringdata_ReceiveWorker
 QT_MOC_LITERAL(0, 0, 13), // "ReceiveWorker"
 QT_MOC_LITERAL(1, 14, 8), // "progress"
 QT_MOC_LITERAL(2, 23, 0), // ""
-QT_MOC_LITERAL(3, 24, 4), // "info"
-QT_MOC_LITERAL(4, 29, 8), // "finished"
-QT_MOC_LITERAL(5, 38, 4), // "name"
-QT_MOC_LITERAL(6, 43, 5), // "error"
-QT_MOC_LITERAL(7, 49, 3) // "err"
+QT_MOC_LITERAL(3, 24, 3), // "msg"
+QT_MOC_LITERAL(4, 28, 8), // "finished"
+QT_MOC_LITERAL(5, 37, 8), // "fileName"
+QT_MOC_LITERAL(6, 46, 5) // "error"
 
     },
-    "ReceiveWorker\0progress\0\0info\0finished\0"
-    "name\0error\0err"
+    "ReceiveWorker\0progress\0\0msg\0finished\0"
+    "fileName\0error"
 };
 #undef QT_MOC_LITERAL
 
@@ -67,7 +66,7 @@ static const uint qt_meta_data_ReceiveWorker[] = {
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void, QMetaType::QString,    5,
-    QMetaType::Void, QMetaType::QString,    7,
+    QMetaType::Void, QMetaType::QString,    3,
 
        0        // eod
 };

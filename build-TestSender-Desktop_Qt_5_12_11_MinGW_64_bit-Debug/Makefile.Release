@@ -187,15 +187,14 @@ release/main.o: ../TestSender/main.cpp D:/QT/5.12.11/mingw73_64/include/QtCore/Q
 		D:/QT/5.12.11/mingw73_64/include/QtCore/qcontiguouscache.h \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/qsharedpointer.h \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/qsharedpointer_impl.h \
-		D:/QT/5.12.11/mingw73_64/include/QtCore/QDataStream \
-		D:/QT/5.12.11/mingw73_64/include/QtCore/qdatastream.h \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/QFile \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/qfile.h \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/qfiledevice.h \
-		D:/QT/5.12.11/mingw73_64/include/QtCore/QDebug \
-		D:/QT/5.12.11/mingw73_64/include/QtCore/QString \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/QFileInfo \
-		D:/QT/5.12.11/mingw73_64/include/QtCore/qfileinfo.h
+		D:/QT/5.12.11/mingw73_64/include/QtCore/qfileinfo.h \
+		D:/QT/5.12.11/mingw73_64/include/QtCore/QDataStream \
+		D:/QT/5.12.11/mingw73_64/include/QtCore/qdatastream.h \
+		D:/QT/5.12.11/mingw73_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o ..\TestSender\main.cpp
 
 ####### Install
