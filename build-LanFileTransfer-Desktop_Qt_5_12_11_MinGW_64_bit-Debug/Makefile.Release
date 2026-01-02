@@ -212,26 +212,6 @@ release/moc_mainwindow.cpp: ../LanFileTransfer/mainwindow.h \
 		D:/QT/5.12.11/mingw73_64/include/QtGui/qtouchdevice.h \
 		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qtabwidget.h \
 		D:/QT/5.12.11/mingw73_64/include/QtGui/qicon.h \
-		D:/QT/5.12.11/mingw73_64/include/QtGui/QStandardItemModel \
-		D:/QT/5.12.11/mingw73_64/include/QtGui/qstandarditemmodel.h \
-		D:/QT/5.12.11/mingw73_64/include/QtCore/qabstractitemmodel.h \
-		D:/QT/5.12.11/mingw73_64/include/QtGui/QStandardItem \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/QListView \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qlistview.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qabstractitemview.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qframe.h \
-		D:/QT/5.12.11/mingw73_64/include/QtCore/qitemselectionmodel.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qabstractitemdelegate.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qstyleoption.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qabstractspinbox.h \
-		D:/QT/5.12.11/mingw73_64/include/QtGui/qvalidator.h \
-		D:/QT/5.12.11/mingw73_64/include/QtCore/qregularexpression.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qslider.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qabstractslider.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qstyle.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qtabbar.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qrubberband.h \
 		release/moc_predefs.h \
 		D:/QT/5.12.11/mingw73_64/bin/moc.exe
 	D:\QT\5.12.11\mingw73_64\bin\moc.exe $(DEFINES) --include F:/QT/LanFileTransfer/build-LanFileTransfer-Desktop_Qt_5_12_11_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/QT/5.12.11/mingw73_64/mkspecs/win32-g++ -IF:/QT/LanFileTransfer/LanFileTransfer -ID:/QT/5.12.11/mingw73_64/include -ID:/QT/5.12.11/mingw73_64/include/QtWidgets -ID:/QT/5.12.11/mingw73_64/include/QtGui -ID:/QT/5.12.11/mingw73_64/include/QtANGLE -ID:/QT/5.12.11/mingw73_64/include/QtCore -I. -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -ID:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include ..\LanFileTransfer\mainwindow.h -o release\moc_mainwindow.cpp
@@ -366,26 +346,6 @@ release/main.o: ../LanFileTransfer/main.cpp ../LanFileTransfer/mainwindow.h \
 		D:/QT/5.12.11/mingw73_64/include/QtGui/qtouchdevice.h \
 		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qtabwidget.h \
 		D:/QT/5.12.11/mingw73_64/include/QtGui/qicon.h \
-		D:/QT/5.12.11/mingw73_64/include/QtGui/QStandardItemModel \
-		D:/QT/5.12.11/mingw73_64/include/QtGui/qstandarditemmodel.h \
-		D:/QT/5.12.11/mingw73_64/include/QtCore/qabstractitemmodel.h \
-		D:/QT/5.12.11/mingw73_64/include/QtGui/QStandardItem \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/QListView \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qlistview.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qabstractitemview.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qframe.h \
-		D:/QT/5.12.11/mingw73_64/include/QtCore/qitemselectionmodel.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qabstractitemdelegate.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qstyleoption.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qabstractspinbox.h \
-		D:/QT/5.12.11/mingw73_64/include/QtGui/qvalidator.h \
-		D:/QT/5.12.11/mingw73_64/include/QtCore/qregularexpression.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qslider.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qabstractslider.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qstyle.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qtabbar.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qrubberband.h \
 		D:/QT/5.12.11/mingw73_64/include/QtWidgets/QApplication \
 		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qapplication.h \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/qcoreapplication.h \
@@ -502,34 +462,7 @@ release/mainwindow.o: ../LanFileTransfer/mainwindow.cpp ../LanFileTransfer/mainw
 		D:/QT/5.12.11/mingw73_64/include/QtGui/qtouchdevice.h \
 		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qtabwidget.h \
 		D:/QT/5.12.11/mingw73_64/include/QtGui/qicon.h \
-		D:/QT/5.12.11/mingw73_64/include/QtGui/QStandardItemModel \
-		D:/QT/5.12.11/mingw73_64/include/QtGui/qstandarditemmodel.h \
-		D:/QT/5.12.11/mingw73_64/include/QtCore/qabstractitemmodel.h \
-		D:/QT/5.12.11/mingw73_64/include/QtGui/QStandardItem \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/QListView \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qlistview.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qabstractitemview.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qframe.h \
-		D:/QT/5.12.11/mingw73_64/include/QtCore/qitemselectionmodel.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qabstractitemdelegate.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qstyleoption.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qabstractspinbox.h \
-		D:/QT/5.12.11/mingw73_64/include/QtGui/qvalidator.h \
-		D:/QT/5.12.11/mingw73_64/include/QtCore/qregularexpression.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qslider.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qabstractslider.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qstyle.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qtabbar.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qrubberband.h \
-		ui_mainwindow.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/QFileDialog \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qfiledialog.h \
-		D:/QT/5.12.11/mingw73_64/include/QtCore/qdir.h \
-		D:/QT/5.12.11/mingw73_64/include/QtCore/qfileinfo.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qdialog.h \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/QMessageBox \
-		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qmessagebox.h
+		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\LanFileTransfer\mainwindow.cpp
 
 release/moc_mainwindow.o: release/moc_mainwindow.cpp 
