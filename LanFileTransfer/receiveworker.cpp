@@ -39,7 +39,8 @@ void ReceiveWorker::run()
     in.readRawData(nameData.data(), nameLen);
     QString fileName = QString::fromUtf8(nameData);
 
-    qint64 fileSize = 0;
+    emit progress("准备接收：" + fileName);
+     qint64 fileSize = 0;
     in >> fileSize;
 
     QDir().mkpath(m_saveDir);

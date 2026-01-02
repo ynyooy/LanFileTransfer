@@ -99,6 +99,7 @@ void MainWindow::on_btnStopReceive_clicked()
 }
 
 
+
 void MainWindow::onNewConnection()
 {
     while (tcpServer->hasPendingConnections()) {
@@ -109,15 +110,18 @@ void MainWindow::onNewConnection()
 
         qDebug() << "新连接：" << client->peerAddress().toString();
 
-        // ⭐ 关键：取 socketDescriptor
+        // ⭐ 1. 取 socketDescriptor（此时是有效的）
         qintptr socketDescriptor = client->socketDescriptor();
-        client->deleteLater();
 
-        // ⭐ 正确获取保存路径
+        // ⭐ 2. 不 close，不 delete
+        client->setParent(nullptr);
+
+        // ⭐ 3. 保存路径
         QString savePath = ui->editSavePath->text();
 
+        // ⭐ 4. 创建接收线程
         ReceiveWorker *worker =
-            new ReceiveWorker(socketDescriptor, savePath, this);
+            new ReceiveWorker(socketDescriptor, savePath);
 
         connect(worker, &ReceiveWorker::progress, this,
         [ = ](const QString & msg) {
@@ -142,6 +146,7 @@ void MainWindow::onNewConnection()
         worker->start();
     }
 }
+
 
 
 
