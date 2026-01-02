@@ -14,6 +14,7 @@
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
@@ -40,22 +41,31 @@ public:
     QVBoxLayout *verticalLayout_4;
     QLabel *lblSubtitle;
     QFrame *line;
-    QVBoxLayout *_2;
+    QVBoxLayout *vboxLayout;
     QLabel *lblSelection;
     QHBoxLayout *hboxLayout;
     QPushButton *btnSendFile;
     QPushButton *btnSendFolder;
     QPushButton *btnSendText;
-    QVBoxLayout *vboxLayout;
+    QVBoxLayout *vboxLayout1;
     QHBoxLayout *hboxLayout1;
     QLabel *lblDevicesTitle;
     QPushButton *btnrefresh;
     QListView *fileListView;
     QWidget *pageReceive;
-    QVBoxLayout *vboxLayout1;
-    QLabel *label;
-    QWidget *pageSettings;
     QVBoxLayout *vboxLayout2;
+    QLabel *lblReceiveTitle;
+    QHBoxLayout *hboxLayout2;
+    QLabel *label;
+    QLineEdit *editSavePath;
+    QPushButton *btnChooseSavePath;
+    QLabel *lblReceiveStatus;
+    QListView *receiveListView;
+    QHBoxLayout *hboxLayout3;
+    QPushButton *btnStartReceive;
+    QPushButton *btnStopReceive;
+    QWidget *pageSettings;
+    QVBoxLayout *vboxLayout3;
     QLabel *label1;
 
     void setupUi(QMainWindow *MainWindow)
@@ -113,12 +123,12 @@ public:
 
         verticalLayout_4->addWidget(line);
 
-        _2 = new QVBoxLayout();
-        _2->setObjectName(QString::fromUtf8("_2"));
+        vboxLayout = new QVBoxLayout();
+        vboxLayout->setObjectName(QString::fromUtf8("vboxLayout"));
         lblSelection = new QLabel(pageSend);
         lblSelection->setObjectName(QString::fromUtf8("lblSelection"));
 
-        _2->addWidget(lblSelection);
+        vboxLayout->addWidget(lblSelection);
 
         hboxLayout = new QHBoxLayout();
         hboxLayout->setObjectName(QString::fromUtf8("hboxLayout"));
@@ -138,13 +148,13 @@ public:
         hboxLayout->addWidget(btnSendText);
 
 
-        _2->addLayout(hboxLayout);
+        vboxLayout->addLayout(hboxLayout);
 
 
-        verticalLayout_4->addLayout(_2);
+        verticalLayout_4->addLayout(vboxLayout);
 
-        vboxLayout = new QVBoxLayout();
-        vboxLayout->setObjectName(QString::fromUtf8("vboxLayout"));
+        vboxLayout1 = new QVBoxLayout();
+        vboxLayout1->setObjectName(QString::fromUtf8("vboxLayout1"));
         hboxLayout1 = new QHBoxLayout();
         hboxLayout1->setObjectName(QString::fromUtf8("hboxLayout1"));
         lblDevicesTitle = new QLabel(pageSend);
@@ -158,35 +168,80 @@ public:
         hboxLayout1->addWidget(btnrefresh);
 
 
-        vboxLayout->addLayout(hboxLayout1);
+        vboxLayout1->addLayout(hboxLayout1);
 
         fileListView = new QListView(pageSend);
         fileListView->setObjectName(QString::fromUtf8("fileListView"));
 
-        vboxLayout->addWidget(fileListView);
+        vboxLayout1->addWidget(fileListView);
 
 
-        verticalLayout_4->addLayout(vboxLayout);
+        verticalLayout_4->addLayout(vboxLayout1);
 
         stackedWidget->addWidget(pageSend);
         pageReceive = new QWidget();
         pageReceive->setObjectName(QString::fromUtf8("pageReceive"));
-        vboxLayout1 = new QVBoxLayout(pageReceive);
-        vboxLayout1->setObjectName(QString::fromUtf8("vboxLayout1"));
+        vboxLayout2 = new QVBoxLayout(pageReceive);
+        vboxLayout2->setObjectName(QString::fromUtf8("vboxLayout2"));
+        lblReceiveTitle = new QLabel(pageReceive);
+        lblReceiveTitle->setObjectName(QString::fromUtf8("lblReceiveTitle"));
+
+        vboxLayout2->addWidget(lblReceiveTitle);
+
+        hboxLayout2 = new QHBoxLayout();
+        hboxLayout2->setObjectName(QString::fromUtf8("hboxLayout2"));
         label = new QLabel(pageReceive);
         label->setObjectName(QString::fromUtf8("label"));
 
-        vboxLayout1->addWidget(label);
+        hboxLayout2->addWidget(label);
+
+        editSavePath = new QLineEdit(pageReceive);
+        editSavePath->setObjectName(QString::fromUtf8("editSavePath"));
+
+        hboxLayout2->addWidget(editSavePath);
+
+        btnChooseSavePath = new QPushButton(pageReceive);
+        btnChooseSavePath->setObjectName(QString::fromUtf8("btnChooseSavePath"));
+
+        hboxLayout2->addWidget(btnChooseSavePath);
+
+
+        vboxLayout2->addLayout(hboxLayout2);
+
+        lblReceiveStatus = new QLabel(pageReceive);
+        lblReceiveStatus->setObjectName(QString::fromUtf8("lblReceiveStatus"));
+
+        vboxLayout2->addWidget(lblReceiveStatus);
+
+        receiveListView = new QListView(pageReceive);
+        receiveListView->setObjectName(QString::fromUtf8("receiveListView"));
+
+        vboxLayout2->addWidget(receiveListView);
+
+        hboxLayout3 = new QHBoxLayout();
+        hboxLayout3->setObjectName(QString::fromUtf8("hboxLayout3"));
+        btnStartReceive = new QPushButton(pageReceive);
+        btnStartReceive->setObjectName(QString::fromUtf8("btnStartReceive"));
+
+        hboxLayout3->addWidget(btnStartReceive);
+
+        btnStopReceive = new QPushButton(pageReceive);
+        btnStopReceive->setObjectName(QString::fromUtf8("btnStopReceive"));
+
+        hboxLayout3->addWidget(btnStopReceive);
+
+
+        vboxLayout2->addLayout(hboxLayout3);
 
         stackedWidget->addWidget(pageReceive);
         pageSettings = new QWidget();
         pageSettings->setObjectName(QString::fromUtf8("pageSettings"));
-        vboxLayout2 = new QVBoxLayout(pageSettings);
-        vboxLayout2->setObjectName(QString::fromUtf8("vboxLayout2"));
+        vboxLayout3 = new QVBoxLayout(pageSettings);
+        vboxLayout3->setObjectName(QString::fromUtf8("vboxLayout3"));
         label1 = new QLabel(pageSettings);
         label1->setObjectName(QString::fromUtf8("label1"));
 
-        vboxLayout2->addWidget(label1);
+        vboxLayout3->addWidget(label1);
 
         stackedWidget->addWidget(pageSettings);
 
@@ -196,7 +251,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -220,7 +275,13 @@ public:
         btnSendText->setText(QApplication::translate("MainWindow", "\346\226\207\346\234\254", nullptr));
         lblDevicesTitle->setText(QApplication::translate("MainWindow", "\351\231\204\350\277\221\347\232\204\350\256\276\345\244\207", nullptr));
         btnrefresh->setText(QApplication::translate("MainWindow", "\345\210\267\346\226\260", nullptr));
-        label->setText(QApplication::translate("MainWindow", "\346\216\245\346\224\266\351\241\265\351\235\242\357\274\210\346\230\276\347\244\272\346\216\245\346\224\266\344\273\273\345\212\241\343\200\201\350\277\233\345\272\246\343\200\201\344\277\235\345\255\230\350\267\257\345\276\204\357\274\211", nullptr));
+        lblReceiveTitle->setText(QApplication::translate("MainWindow", "<h3>\346\216\245\346\224\266\346\226\207\344\273\266</h3>", nullptr));
+        label->setText(QApplication::translate("MainWindow", "\344\277\235\345\255\230\350\267\257\345\276\204\357\274\232", nullptr));
+        editSavePath->setPlaceholderText(QApplication::translate("MainWindow", "\350\257\267\351\200\211\346\213\251\346\216\245\346\224\266\346\226\207\344\273\266\344\277\235\345\255\230\350\267\257\345\276\204", nullptr));
+        btnChooseSavePath->setText(QApplication::translate("MainWindow", "\351\200\211\346\213\251", nullptr));
+        lblReceiveStatus->setText(QApplication::translate("MainWindow", "\347\212\266\346\200\201\357\274\232\346\234\252\345\274\200\345\247\213\346\216\245\346\224\266", nullptr));
+        btnStartReceive->setText(QApplication::translate("MainWindow", "\345\274\200\345\247\213\346\216\245\346\224\266", nullptr));
+        btnStopReceive->setText(QApplication::translate("MainWindow", "\345\201\234\346\255\242\346\216\245\346\224\266", nullptr));
         label1->setText(QApplication::translate("MainWindow", "\350\256\276\347\275\256\351\241\265\351\235\242\357\274\210\350\256\276\345\244\207\345\220\215 / \347\253\257\345\217\243 / \344\277\235\345\255\230\350\267\257\345\276\204\357\274\211", nullptr));
     } // retranslateUi
 

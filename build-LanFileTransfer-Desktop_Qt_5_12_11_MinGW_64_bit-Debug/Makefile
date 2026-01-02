@@ -250,6 +250,7 @@ Makefile: ../LanFileTransfer/LanFileTransfer.pro D:/QT/5.12.11/mingw73_64/mkspec
 		../LanFileTransfer/LanFileTransfer.pro \
 		D:/QT/5.12.11/mingw73_64/lib/Qt5Widgets.prl \
 		D:/QT/5.12.11/mingw73_64/lib/Qt5Gui.prl \
+		D:/QT/5.12.11/mingw73_64/lib/Qt5Network.prl \
 		D:/QT/5.12.11/mingw73_64/lib/Qt5Core.prl \
 		D:/QT/5.12.11/mingw73_64/lib/qtmain.prl
 	$(QMAKE) -o Makefile ..\LanFileTransfer\LanFileTransfer.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -440,6 +441,7 @@ D:/QT/5.12.11/mingw73_64/mkspecs/features/lex.prf:
 ../LanFileTransfer/LanFileTransfer.pro:
 D:/QT/5.12.11/mingw73_64/lib/Qt5Widgets.prl:
 D:/QT/5.12.11/mingw73_64/lib/Qt5Gui.prl:
+D:/QT/5.12.11/mingw73_64/lib/Qt5Network.prl:
 D:/QT/5.12.11/mingw73_64/lib/Qt5Core.prl:
 D:/QT/5.12.11/mingw73_64/lib/qtmain.prl:
 qmake: FORCE
