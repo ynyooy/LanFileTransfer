@@ -227,6 +227,9 @@ release/moc_mainwindow.cpp: ../LanFileTransfer/mainwindow.h \
 		D:/QT/5.12.11/mingw73_64/include/QtGui/QStandardItemModel \
 		D:/QT/5.12.11/mingw73_64/include/QtGui/qstandarditemmodel.h \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/qabstractitemmodel.h \
+		D:/QT/5.12.11/mingw73_64/include/QtCore/QTimer \
+		D:/QT/5.12.11/mingw73_64/include/QtCore/qtimer.h \
+		D:/QT/5.12.11/mingw73_64/include/QtCore/qbasictimer.h \
 		release/moc_predefs.h \
 		D:/QT/5.12.11/mingw73_64/bin/moc.exe
 	D:\QT\5.12.11\mingw73_64\bin\moc.exe $(DEFINES) --include F:/QT/LanFileTransfer/build-LanFileTransfer-Desktop_Qt_5_12_11_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/QT/5.12.11/mingw73_64/mkspecs/win32-g++ -IF:/QT/LanFileTransfer/LanFileTransfer -ID:/QT/5.12.11/mingw73_64/include -ID:/QT/5.12.11/mingw73_64/include/QtWidgets -ID:/QT/5.12.11/mingw73_64/include/QtGui -ID:/QT/5.12.11/mingw73_64/include/QtANGLE -ID:/QT/5.12.11/mingw73_64/include/QtNetwork -ID:/QT/5.12.11/mingw73_64/include/QtCore -I. -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -ID:/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -ID:/QT/Tools/mingw730_64/x86_64-w64-mingw32/include ..\LanFileTransfer\mainwindow.h -o release\moc_mainwindow.cpp
@@ -445,6 +448,9 @@ release/main.o: ../LanFileTransfer/main.cpp ../LanFileTransfer/mainwindow.h \
 		D:/QT/5.12.11/mingw73_64/include/QtGui/QStandardItemModel \
 		D:/QT/5.12.11/mingw73_64/include/QtGui/qstandarditemmodel.h \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/qabstractitemmodel.h \
+		D:/QT/5.12.11/mingw73_64/include/QtCore/QTimer \
+		D:/QT/5.12.11/mingw73_64/include/QtCore/qtimer.h \
+		D:/QT/5.12.11/mingw73_64/include/QtCore/qbasictimer.h \
 		D:/QT/5.12.11/mingw73_64/include/QtWidgets/QApplication \
 		D:/QT/5.12.11/mingw73_64/include/QtWidgets/qapplication.h \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/qcoreapplication.h \
@@ -570,12 +576,19 @@ release/mainwindow.o: ../LanFileTransfer/mainwindow.cpp ../LanFileTransfer/mainw
 		D:/QT/5.12.11/mingw73_64/include/QtGui/QStandardItemModel \
 		D:/QT/5.12.11/mingw73_64/include/QtGui/qstandarditemmodel.h \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/qabstractitemmodel.h \
+		D:/QT/5.12.11/mingw73_64/include/QtCore/QTimer \
+		D:/QT/5.12.11/mingw73_64/include/QtCore/qtimer.h \
+		D:/QT/5.12.11/mingw73_64/include/QtCore/qbasictimer.h \
 		ui_mainwindow.h \
 		../LanFileTransfer/receiveworker.h \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/QThread \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/qthread.h \
 		D:/QT/5.12.11/mingw73_64/include/QtNetwork/QTcpSocket \
-		D:/QT/5.12.11/mingw73_64/include/QtNetwork/qtcpsocket.h
+		D:/QT/5.12.11/mingw73_64/include/QtNetwork/qtcpsocket.h \
+		D:/QT/5.12.11/mingw73_64/include/QtCore/QDebug \
+		D:/QT/5.12.11/mingw73_64/include/QtCore/QDir \
+		D:/QT/5.12.11/mingw73_64/include/QtCore/qdir.h \
+		D:/QT/5.12.11/mingw73_64/include/QtCore/qfileinfo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\LanFileTransfer\mainwindow.cpp
 
 release/receiveworker.o: ../LanFileTransfer/receiveworker.cpp ../LanFileTransfer/receiveworker.h \
@@ -653,7 +666,12 @@ release/receiveworker.o: ../LanFileTransfer/receiveworker.cpp ../LanFileTransfer
 		D:/QT/5.12.11/mingw73_64/include/QtCore/qfile.h \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/qfiledevice.h \
 		D:/QT/5.12.11/mingw73_64/include/QtCore/QDataStream \
-		D:/QT/5.12.11/mingw73_64/include/QtCore/qdatastream.h
+		D:/QT/5.12.11/mingw73_64/include/QtCore/qdatastream.h \
+		D:/QT/5.12.11/mingw73_64/include/QtCore/QDebug \
+		D:/QT/5.12.11/mingw73_64/include/QtCore/QDir \
+		D:/QT/5.12.11/mingw73_64/include/QtCore/qdir.h \
+		D:/QT/5.12.11/mingw73_64/include/QtCore/qfileinfo.h \
+		D:/QT/5.12.11/mingw73_64/include/QtCore/QByteArray
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\receiveworker.o ..\LanFileTransfer\receiveworker.cpp
 
 release/moc_mainwindow.o: release/moc_mainwindow.cpp 

@@ -148,6 +148,8 @@
         </item>
        </layout>
       </widget>
+
+
       <widget class="QWidget" name="pageReceive">
        <layout class="QVBoxLayout">
         <item>
@@ -212,6 +214,9 @@
         </item>
        </layout>
       </widget>
+
+
+
       <widget class="QWidget" name="pageSettings">
        <layout class="QVBoxLayout">
         <item>

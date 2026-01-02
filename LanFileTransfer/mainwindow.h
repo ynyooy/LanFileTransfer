@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QTcpServer>
 #include <QStandardItemModel>
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -24,10 +25,7 @@ private slots:
     void on_receiveButton_clicked();
     void on_settingsButton_clicked();
     void onNewConnection();
-
-
     void on_btnStartReceive_clicked();
-
     void on_btnStopReceive_clicked();
 
 private:
