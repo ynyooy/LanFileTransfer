@@ -45,7 +45,6 @@ public:
     QLabel *lblSelection;
     QHBoxLayout *hboxLayout;
     QPushButton *btnSendFile;
-    QPushButton *btnSendFolder;
     QPushButton *btnSendText;
     QVBoxLayout *vboxLayout1;
     QHBoxLayout *hboxLayout1;
@@ -136,11 +135,6 @@ public:
         btnSendFile->setObjectName(QString::fromUtf8("btnSendFile"));
 
         hboxLayout->addWidget(btnSendFile);
-
-        btnSendFolder = new QPushButton(pageSend);
-        btnSendFolder->setObjectName(QString::fromUtf8("btnSendFolder"));
-
-        hboxLayout->addWidget(btnSendFolder);
 
         btnSendText = new QPushButton(pageSend);
         btnSendText->setObjectName(QString::fromUtf8("btnSendText"));
@@ -271,7 +265,6 @@ public:
 "</p></html>", nullptr));
         lblSelection->setText(QApplication::translate("MainWindow", "\351\200\211\346\213\251\345\217\221\351\200\201\345\206\205\345\256\271", nullptr));
         btnSendFile->setText(QApplication::translate("MainWindow", "\346\226\207\344\273\266", nullptr));
-        btnSendFolder->setText(QApplication::translate("MainWindow", "\346\226\207\344\273\266\345\244\271", nullptr));
         btnSendText->setText(QApplication::translate("MainWindow", "\346\226\207\346\234\254", nullptr));
         lblDevicesTitle->setText(QApplication::translate("MainWindow", "\351\231\204\350\277\221\347\232\204\350\256\276\345\244\207", nullptr));
         btnrefresh->setText(QApplication::translate("MainWindow", "\345\210\267\346\226\260", nullptr));
