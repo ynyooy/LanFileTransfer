@@ -30,6 +30,36 @@ MainWindow::MainWindow(QWidget *parent)
     //初始化按钮状态
     ui->btnStartReceive->setEnabled(true);
     ui->btnStopReceive->setEnabled(false);
+
+    //==============================设备识别============================
+    deviceModel = new QStandardItemModel(this);
+    ui->fileListView->setModel(deviceModel);
+
+    deviceDiscovery = new DeviceDiscovery(this);
+
+    connect(deviceDiscovery, &DeviceDiscovery::deviceFound,
+    this, [ = ](const DeviceInfo & device) {
+
+        QString text = QString("%1 (%2)")
+                       .arg(device.name)
+                       .arg(device.ip);
+
+        // 防重复
+        for (int i = 0; i < deviceModel->rowCount(); ++i) {
+            if (deviceModel->item(i)->text() == text)
+                return;
+        }
+
+        QStandardItem *item = new QStandardItem(text);
+        item->setData(device.ip, Qt::UserRole);
+        item->setData(device.port, Qt::UserRole + 1);
+
+        deviceModel->appendRow(item);
+    });
+
+    deviceDiscovery->start();
+    //------------------------------------------------------------------
+
 }
 
 MainWindow::~MainWindow()

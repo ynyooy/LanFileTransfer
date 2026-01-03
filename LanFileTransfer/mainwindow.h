@@ -5,6 +5,8 @@
 #include <QTcpServer>
 #include <QStandardItemModel>
 #include <QTimer>
+#include "devicediscovery.h"
+#include <QStandardItemModel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -33,6 +35,8 @@ private:
     Ui::MainWindow *ui;
     QTcpServer *tcpServer;
     QStandardItemModel *receiveModel;
+    DeviceDiscovery *deviceDiscovery;
+    QStandardItemModel *deviceModel;
 };
 
 #endif // MAINWINDOW_H

@@ -65,8 +65,12 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
+
+
+
+
       <widget class="QWidget" name="pageSend">
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
@@ -148,6 +152,11 @@
         </item>
        </layout>
       </widget>
+
+
+
+
+
       <widget class="QWidget" name="pageReceive">
        <layout class="QVBoxLayout">
         <item>
@@ -212,6 +221,13 @@
         </item>
        </layout>
       </widget>
+
+
+
+
+
+
+
       <widget class="QWidget" name="pageSettings">
        <layout class="QVBoxLayout">
         <item>
