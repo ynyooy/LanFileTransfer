@@ -289,10 +289,33 @@ void MainWindow::on_btnSendFile_clicked()
     sendFile(filePath);
 }
 
+void MainWindow::sendText(const QString &text)
+{
+    QTcpSocket socket;
+    socket.connectToHost(m_targetIp, m_targetPort);
 
+    if (!socket.waitForConnected(5000)) {
+        QMessageBox::critical(this, "错误", "连接接收端失败");
+        return;
+    }
 
+    QDataStream out(&socket);
+    out.setVersion(QDataStream::Qt_5_12);
 
+    qint8 type = 3; // TEXT
+    QByteArray textBytes = text.toUtf8();
+    qint32 textLen = textBytes.size();
 
+    out << type;
+    out << textLen;
+    out.writeRawData(textBytes.data(), textLen);
+
+    socket.flush();
+    socket.waitForBytesWritten(3000);
+    socket.disconnectFromHost();
+
+    QMessageBox::information(this, "完成", "文本发送完成");
+}
 
 
 void MainWindow::on_btnSendFolder_clicked()
@@ -303,7 +326,24 @@ void MainWindow::on_btnSendFolder_clicked()
 
 void MainWindow::on_btnSendText_clicked()
 {
+    if (m_targetIp.isEmpty()) {
+        QMessageBox::warning(this, "提示", "请先选择接收设备");
+        return;
+    }
 
+    bool ok = false;
+    QString text = QInputDialog::getMultiLineText(
+                       this,
+                       "发送文本",
+                       "请输入要发送的文本：",
+                       "",
+                       &ok
+                   );
+
+    if (!ok || text.isEmpty())
+        return;
+
+    sendText(text);
 }
 
 
