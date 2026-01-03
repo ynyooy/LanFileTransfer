@@ -67,10 +67,6 @@
       <property name="currentIndex">
        <number>0</number>
       </property>
-
-
-
-
       <widget class="QWidget" name="pageSend">
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
@@ -104,13 +100,6 @@
              <widget class="QPushButton" name="btnSendFile">
               <property name="text">
                <string>文件</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="btnSendFolder">
-              <property name="text">
-               <string>文件夹</string>
               </property>
              </widget>
             </item>
@@ -152,11 +141,6 @@
         </item>
        </layout>
       </widget>
-
-
-
-
-
       <widget class="QWidget" name="pageReceive">
        <layout class="QVBoxLayout">
         <item>
@@ -221,13 +205,6 @@
         </item>
        </layout>
       </widget>
-
-
-
-
-
-
-
       <widget class="QWidget" name="pageSettings">
        <layout class="QVBoxLayout">
         <item>
