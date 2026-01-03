@@ -7,6 +7,8 @@
 #include <QDir>
 #include <QFileDialog>
 #include <QStandardItemModel>
+#include <QMessageBox>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -58,6 +60,15 @@ MainWindow::MainWindow(QWidget *parent)
     });
 
     deviceDiscovery->start();
+
+    //实现文件发送
+    connect(ui->fileListView, &QListView::clicked,
+            this, &MainWindow::onDeviceSelected);
+
+    connect(ui->btnSendFile, &QPushButton::clicked,
+            this, &MainWindow::on_btnSendFile_clicked);
+
+
     //------------------------------------------------------------------
 
 }
@@ -178,8 +189,6 @@ void MainWindow::onNewConnection()
 }
 
 
-
-
 void MainWindow::on_btnChooseSavePath_clicked()
 {
     QString dir = QFileDialog::getExistingDirectory(
@@ -195,6 +204,86 @@ void MainWindow::on_btnChooseSavePath_clicked()
 }
 
 
+//==================================实现文件发送=================================
+void MainWindow::onDeviceSelected(const QModelIndex &index)
+{
+    QStandardItem *item = deviceModel->itemFromIndex(index);
+    if (!item) return;
+
+    m_targetIp = item->data(Qt::UserRole).toString();
+    m_targetPort = item->data(Qt::UserRole + 1).toUInt();
+
+    qDebug() << "选择设备：" << m_targetIp << m_targetPort;
+}
 
 
+void MainWindow::on_btnSendFile_clicked()
+{
+    if (m_targetIp.isEmpty()) {
+        QMessageBox::warning(this, "提示", "请先选择接收设备");
+        return;
+    }
+
+    QString filePath = QFileDialog::getOpenFileName(
+                           this,
+                           "选择要发送的文件",
+                           QDir::homePath()
+                       );
+
+    if (filePath.isEmpty())
+        return;
+
+    sendFile(filePath);
+}
+void MainWindow::sendFile(const QString &filePath)
+{
+    QFile file(filePath);
+    if (!file.open(QIODevice::ReadOnly)) {
+        QMessageBox::critical(this, "错误", "无法打开文件");
+        return;
+    }
+
+    QFileInfo info(filePath);
+    QString fileName = info.fileName();
+    qint64 fileSize = file.size();
+
+    QTcpSocket socket;
+    socket.connectToHost(m_targetIp, m_targetPort);
+
+    if (!socket.waitForConnected(5000)) {
+        QMessageBox::critical(this, "错误", "连接接收端失败");
+        return;
+    }
+
+    QDataStream out(&socket);
+    out.setVersion(QDataStream::Qt_5_12);
+
+    // ===== 协议开始 =====
+
+    QByteArray nameBytes = fileName.toUtf8();
+    qint32 nameLen = nameBytes.size();
+
+    out << nameLen;
+    out.writeRawData(nameBytes.data(), nameLen);
+    out << fileSize;
+
+    socket.flush();
+    socket.waitForBytesWritten(3000);
+
+    // ===== 发送文件内容 =====
+
+    qint64 sent = 0;
+    while (!file.atEnd()) {
+        QByteArray chunk = file.read(4096);
+        socket.write(chunk);
+        socket.waitForBytesWritten(3000);
+        sent += chunk.size();
+    }
+
+    file.close();
+    socket.disconnectFromHost();
+
+    QMessageBox::information(this, "完成",
+                             QString("文件发送完成：%1").arg(fileName));
+}
 
