@@ -32,11 +32,7 @@ private slots:
     void on_btnChooseSavePath_clicked();
     void onDeviceSelected(const QModelIndex &index);
     void on_btnSendFile_clicked();
-
-    void on_btnSendFolder_clicked();
-
     void on_btnSendText_clicked();
-
     void on_btnrefresh_clicked();
 
 private:
