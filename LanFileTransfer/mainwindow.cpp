@@ -8,6 +8,8 @@
 #include <QFileDialog>
 #include <QStandardItemModel>
 #include <QMessageBox>
+#include <QInputDialog>
+
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -216,25 +218,6 @@ void MainWindow::onDeviceSelected(const QModelIndex &index)
     qDebug() << "选择设备：" << m_targetIp << m_targetPort;
 }
 
-
-void MainWindow::on_btnSendFile_clicked()
-{
-    if (m_targetIp.isEmpty()) {
-        QMessageBox::warning(this, "提示", "请先选择接收设备");
-        return;
-    }
-
-    QString filePath = QFileDialog::getOpenFileName(
-                           this,
-                           "选择要发送的文件",
-                           QDir::homePath()
-                       );
-
-    if (filePath.isEmpty())
-        return;
-
-    sendFile(filePath);
-}
 void MainWindow::sendFile(const QString &filePath)
 {
     QFile file(filePath);
@@ -248,7 +231,7 @@ void MainWindow::sendFile(const QString &filePath)
     qint64 fileSize = file.size();
 
     QTcpSocket socket;
-    socket.connectToHost(m_targetIp, m_targetPort);
+    socket.connectToHost("127.0.0.1", 45454);
 
     if (!socket.waitForConnected(5000)) {
         QMessageBox::critical(this, "错误", "连接接收端失败");
@@ -286,4 +269,53 @@ void MainWindow::sendFile(const QString &filePath)
     QMessageBox::information(this, "完成",
                              QString("文件发送完成：%1").arg(fileName));
 }
+
+void MainWindow::on_btnSendFile_clicked()
+{
+    if (m_targetIp.isEmpty()) {
+        QMessageBox::warning(this, "提示", "请先选择接收设备");
+        return;
+    }
+
+    QString filePath = QFileDialog::getOpenFileName(
+                           this,
+                           "选择要发送的文件",
+                           QDir::homePath()
+                       );
+
+    if (filePath.isEmpty())
+        return;
+
+    sendFile(filePath);
+}
+
+
+
+
+
+
+
+void MainWindow::on_btnSendFolder_clicked()
+{
+
+}
+
+
+void MainWindow::on_btnSendText_clicked()
+{
+
+}
+
+
+void MainWindow::on_btnrefresh_clicked()
+{
+    deviceModel->clear();
+
+    QStandardItem *item = new QStandardItem("本机 (127.0.0.1)");
+    item->setData("127.0.0.1", Qt::UserRole);
+    item->setData(45454, Qt::UserRole + 1);
+
+    deviceModel->appendRow(item);
+}
+
 

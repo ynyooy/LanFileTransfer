@@ -33,15 +33,24 @@ private slots:
     void onDeviceSelected(const QModelIndex &index);
     void on_btnSendFile_clicked();
 
+    void on_btnSendFolder_clicked();
+
+    void on_btnSendText_clicked();
+
+    void on_btnrefresh_clicked();
+
 private:
     Ui::MainWindow *ui;
     QTcpServer *tcpServer;
     QStandardItemModel *receiveModel;
     DeviceDiscovery *deviceDiscovery;
+
+
     QStandardItemModel *deviceModel;
     QString m_targetIp;
     quint16 m_targetPort;
     void sendFile(const QString &filePath);
+    void sendText(const QString &text);
 };
 
 #endif // MAINWINDOW_H
