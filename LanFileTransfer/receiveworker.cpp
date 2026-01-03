@@ -40,7 +40,7 @@ void ReceiveWorker::run()
     QString fileName = QString::fromUtf8(nameData);
 
     emit progress("准备接收：" + fileName);
-     qint64 fileSize = 0;
+    qint64 fileSize = 0;
     in >> fileSize;
 
     QDir().mkpath(m_saveDir);
@@ -52,10 +52,17 @@ void ReceiveWorker::run()
 
     qint64 received = 0;
     while (received < fileSize) {
-        if (!socket.waitForReadyRead(5000))
-            break;
+        if (!socket.waitForReadyRead(5000)){
+            emit error("数据接收超时");
+            file.close();
+            return;
+        }
 
-        QByteArray data = socket.readAll();
+        QByteArray data = socket.read(qMin<qint64>(4096, fileSize - received));
+        if(    data.isEmpty()){
+            emit error("连接被对方关闭");
+            return;
+        }
         file.write(data);
         received += data.size();
 
