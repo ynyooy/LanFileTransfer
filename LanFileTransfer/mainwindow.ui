@@ -65,7 +65,7 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="pageSend">
        <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -206,13 +206,113 @@
        </layout>
       </widget>
       <widget class="QWidget" name="pageSettings">
-       <layout class="QVBoxLayout">
+       <layout class="QVBoxLayout" name="verticalLayout_settings">
+
         <item>
-         <widget class="QLabel" name="label">
+         <widget class="QLabel" name="lblSettingsTitle">
           <property name="text">
-           <string>设置页面（设备名 / 端口 / 保存路径）</string>
+           <string>⚙ 设置</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
+        </item>
+
+        <item>
+         <widget class="QFrame">
+          <property name="frameShape">
+           <enum>QFrame::HLine</enum>
+          </property>
+         </widget>
+        </item>
+
+        <!-- 设备名 -->
+        <item>
+         <layout class="QHBoxLayout">
+          <item>
+           <widget class="QLabel">
+            <property name="text">
+             <string>设备名称：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="editDeviceName"/>
+          </item>
+         </layout>
+        </item>
+
+        <!-- 端口 -->
+        <item>
+         <layout class="QHBoxLayout">
+          <item>
+           <widget class="QLabel">
+            <property name="text">
+             <string>监听端口：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spinPort">
+            <property name="minimum">
+             <number>1024</number>
+            </property>
+            <property name="maximum">
+             <number>65535</number>
+            </property>
+            <property name="value">
+             <number>45454</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+
+        <!-- 保存路径 -->
+        <item>
+         <layout class="QHBoxLayout">
+          <item>
+           <widget class="QLabel">
+            <property name="text">
+             <string>保存路径：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="editSavePath"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnChooseSavePath">
+            <property name="text">
+             <string>浏览</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+
+        <!-- 保存按钮 -->
+        <item>
+         <widget class="QPushButton" name="btnSaveSettings">
+          <property name="text">
+           <string>保存设置</string>
+          </property>
+         </widget>
+        </item>
+
+        <item>
+         <spacer>
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
         </item>
        </layout>
       </widget>
